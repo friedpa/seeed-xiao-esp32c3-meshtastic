@@ -4,7 +4,7 @@
 
 
 Custom Meshtastic firmware for the **Lora-shuttle: HT-CT62 (ESP32-C3 + SX1262) devboard** Standalone or stacked configuration with a carrier board e.g. 
-AI-On-The-Edge-Cam: Esp32-S3 with PoE, SD, Camera
+AI-On-The-Edge-Cam: ESP32-S3 with PoE, SD, Camera
 
 ![Version](https://www.tindie.com/products/allexok/lora-shuttle-ht-ct62-esp32-c3-sx1262-devboard/)
 ![Hardware](https://img.shields.io/badge/hardware-ESP32--C3-green)

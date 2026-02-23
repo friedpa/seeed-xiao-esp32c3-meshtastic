@@ -21,7 +21,7 @@ echo "✓ esptool.py found: $(esptool.py version 2>&1 | head -1)"
 echo ""
 
 # Firmware file
-FIRMWARE="firmware/firmware-seeed-xiao-esp32c3-sx1262-2.7.19.9d06c1b.factory.bin"
+FIRMWARE="firmware/firmware-heltec_esp32c3-2.7.20.417ca86.factory.bin"
 
 if [ ! -f "$FIRMWARE" ]; then
     echo "❌ Firmware file not found: $FIRMWARE"

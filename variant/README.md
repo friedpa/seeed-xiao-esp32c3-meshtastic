@@ -29,27 +29,27 @@ The module has two 2.54mm header pinouts with 8 pins per side.
 
 | Header | HT62-CT | Function |
 |--------------|------------|----------|
-| Pin 1 Not used |  |  |
-| Pin 2 Not used |  |  |
-| Pin 3 Not used |  |  |
-| Pin 4 3.3V | Pin 12 3.3V | Power |
-| Pin 5 GND | Pin 02 GND | Power |
-| Pin 6 GND | Pin 13 GND | Power |
-| Pin 7 GND | PIN 21 GND | Power |
-| Pin 8 5V | N/A |  |
+| Pin 1 - Not used |  |  |
+| Pin 2 - Not used |  |  |
+| Pin 3 - Not used |  |  |
+| Pin 4 - 3.3V | Pin 12 3.3V | Power |
+| Pin 5 - GND | Pin 02 GND | Ground |
+| Pin 6 - GND | Pin 13 GND | Ground |
+| Pin 7 - GND | PIN 21 GND | Ground |
+| Pin 8 - 5V | N/A | USB Typ C - Connector |
 
 ### Header H2
 
 | Header | HT62-CT | Function |
 |--------------|------------|----------|
-| Pin 1 RX | Pin 19 RXD | Data |
-| Pin 2 TX | Pin 20 TXD | Data |
-| Pin 3 Not used |  |  |
-| Pin 4 Not used |  |  |
-| Pin 5 Not used |  |  |
-| Pin 6 GPIO 02 | Pin 08 GPIO 02 |  |
-| Pin 7 SCL | Pin 01 GPIO 01 | I2C SCL |
-| Pin 8 SDA | Pim 00 GPIO 00 | I2C SDA |
+| Pin 1 - RX | Pin 19 RXD | Data |
+| Pin 2 - TX | Pin 20 TXD | Data |
+| Pin 3 - Not used |  |  |
+| Pin 4 - Not used |  |  |
+| Pin 5 - Not used |  |  |
+| Pin 6 - GPIO 02 | Pin 08 GPIO 02 |  |
+| Pin 7 - SCL | Pin 01 GPIO 01 | I2C SCL |
+| Pin 8 - SDA | Pim 00 GPIO 00 | I2C SDA |
 
 ### I2C Sensor Support
 GPIO 01 (D7) and GPIO 00 (D6) are available via the SX1262 pass-through pins D7 and D6 for external I2C sensors:
@@ -82,9 +82,9 @@ pio run -e seeed-xiao-esp32c3-sx1262 -t upload --upload-port /dev/ttyACM0
 
 ## Hardware Model
 - **Hardware Model ID**: 254
-- **Slug**: SEEED_XIAO_ESP32C3
-- **Display Name**: Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) devboard
+- **Slug**: Heltec_HT-62CT (ESP32-C3 + SX1262)
+- **Display Name**: Lora-shuttle: HT-CT62 (ESP32-C3 + SX1262) devboard
 
 ## References
 - [Heltec HT-62CT](https://heltec.org/project/ht-ct62/)
-- [Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) devboard](https://www.tindie.com/products/allexok/lora-shuttle-ht-ct62-esp32-c3-sx1262-devboard/#specs)
+- [Lora-shuttle: HT-CT62 (ESP32-C3 + SX1262) devboard](https://www.tindie.com/products/allexok/lora-shuttle-ht-ct62-esp32-c3-sx1262-devboard/#specs)

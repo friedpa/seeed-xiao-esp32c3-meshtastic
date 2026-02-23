@@ -1,6 +1,6 @@
 # Meshtastic Firmware for Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) devboard
 
-![image1](https://github.com/benb0jangles/seeed-xiao-esp32c3-meshtastic/blob/main/img/1.jpg)
+![image1](https://github.com/friedpa/seeed-xiao-esp32c3-meshtastic/blob/main/img/2025-08-22T16_43_20.347Z-top.jpg)
 
 
 Custom Meshtastic firmware for the **Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) devboard** in stacked configuration.
@@ -11,10 +11,10 @@ Custom Meshtastic firmware for the **Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) d
 
 ## 📦 Hardware Requirements
 
-- [Seeed XIAO ESP32-C3](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/) development board
-- [Wio SX1262 LoRa module](https://wiki.seeedstudio.com/wio_sx1262/) (868MHz/915MHz depending on region)
-- 2.54mm headers for stacking (both modules have 8 pins per side)
+- [HT-CT62 (Esp32-C3 + SX1262) devboard](https://www.tindie.com/products/allexok/lora-shuttle-ht-ct62-esp32-c3-sx1262-devboard/#specs)
+- 2.54mm headers for stacking (the module has two 8 pin header)
 - LoRa antenna compatible with your frequency band
+- WLAN antenna (optional)
 
 ## 🔌 Hardware Setup
 

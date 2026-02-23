@@ -14,13 +14,14 @@ This variant is designed for the **Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) dev
 | 3.3V | 3.3V | Power |
 | GPIO 00 | N/A | I2C SDA |
 | GPIO 01 | N/A | I2C SCL |
-| GPIO 09 | BUSY | Busy Signal |
-| GPIO 10 | RST | Radio Reset |
-| GPIO 12 | MISO | SPI Data In |
-| GPIO 13 | MOSI | SPI Data Out |
-| GPIO 14 | NSS | SPI Chip Select |
-| GPIO 15 | DIO1 | LoRa Interrupt |
-| GPIO 16 | SCK | SPI Clock |
+| GPIO 03 | DIO1 | LoRa Interrupt |
+| GPIO 04 | BUSY | Busy Signal |
+| GPIO 05 | RST | Radio Reset |
+| GPIO 06 | MISO | SPI Data In |
+| GPIO 07 | MOSI | SPI Data Out |
+| GPIO 08 | NSS | SPI Chip Select |
+| GPIO 09 | N/A | Boot User Button |
+| GPIO 10 | SCK | SPI Clock |
 
 ### PIN Mapping of the module headers
 The module has two 2.54mm header pinouts with 8 pins per side.

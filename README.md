@@ -1,11 +1,11 @@
-# Meshtastic Firmware for Seeed XIAO ESP32-C3 + Wio SX1262
+# Meshtastic Firmware for Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) devboard
 
 ![image1](https://github.com/benb0jangles/seeed-xiao-esp32c3-meshtastic/blob/main/img/1.jpg)
 
 
-Custom Meshtastic firmware for the **Seeed XIAO ESP32-C3** with **Wio SX1262 LoRa module** in stacked configuration.
+Custom Meshtastic firmware for the **Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) devboard** in stacked configuration.
 
-![Version](https://img.shields.io/badge/meshtastic-v2.7.19-blue)
+![Version](https://www.tindie.com/products/allexok/lora-shuttle-ht-ct62-esp32-c3-sx1262-devboard/)
 ![Hardware](https://img.shields.io/badge/hardware-ESP32--C3-green)
 ![Radio](https://img.shields.io/badge/radio-SX1262-orange)
 
@@ -13,7 +13,7 @@ Custom Meshtastic firmware for the **Seeed XIAO ESP32-C3** with **Wio SX1262 LoR
 
 - [Seeed XIAO ESP32-C3](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/) development board
 - [Wio SX1262 LoRa module](https://wiki.seeedstudio.com/wio_sx1262/) (868MHz/915MHz depending on region)
-- 2.54mm headers for stacking (both modules have 7 pins per side)
+- 2.54mm headers for stacking (both modules have 8 pins per side)
 - LoRa antenna compatible with your frequency band
 
 ## 🔌 Hardware Setup

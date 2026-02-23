@@ -18,51 +18,66 @@ Custom Meshtastic firmware for the **Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) d
 
 ## 🔌 Hardware Setup
 
-### Stacking Configuration
+## Hardware Configuration
 
-The modules stack directly with **power pins aligned**:
+### Pin Mappings
 
-```
-ESP32-C3 (bottom)          Wio SX1262 (top)
-─────────────────          ────────────────
-Left Side:                 Left Side:
-  5V          ────────────   VCC
-  GND         ────────────   GND
-  3.3V        ────────────   3.3V
-  D10 (GPIO10)────────────   MOSI
-  D9  (GPIO9) ────────────   MISO
-  D8  (GPIO8) ────────────   SCK
-  D7  (GPIO20)────────────   D7 (pass-through)
+#### HT-62CT intern PIN mapping between ESP32-C3 and SX1262
 
-Right Side:                Right Side:
-  D0  (GPIO2) ────────────   D0 (pass-through)
-  D1  (GPIO3) ────────────   DIO1
-  D2  (GPIO4) ────────────   RST
-  D3  (GPIO5) ────────────   BUSY
-  D4  (GPIO6) ────────────   NSS
-  D5  (GPIO7) ────────────   RF_SW
-  D6  (GPIO21)────────────   D6 (pass-through)
-```
+| ESP32-C3 Pin | SX1262 Pin | Function |
+|--------------|------------|----------|
+| GND | GND | Ground |
+| 3.3V | 3.3V | Power |
+| D00 (GPIO 00) | D6 | Pass-through (I2C SDA) |
+| D01 (GPIO 01) | D7 | Pass-through (I2C SCL) |
+| D09 (GPIO 09) | BUSY | Busy Signal |
+| D10 (GPIO 10) | RST | Radio Reset |
+| D12 (GPIO 12) | MISO | SPI Data In |
+| D13 (GPIO 13) | MOSI | SPI Data Out |
+| D14 (GPIO 14) | NSS | SPI Chip Select |
+| D15 (GPIO 15) | DIO1 | LoRa Interrupt |
+| D16 (GPIO 16) | SCK | SPI Clock |
 
-### Pin Mapping Summary
+### PIN Mapping of the module headers
+The module has two 2.54mm header pinouts with 8 pins per side.
 
-| Function | ESP32-C3 Pin | SX1262 Pin |
-|----------|--------------|------------|
-| SPI MOSI | GPIO10 (D10) | MOSI |
-| SPI MISO | GPIO9 (D9) | MISO |
-| SPI SCK | GPIO8 (D8) | SCK |
-| Chip Select | GPIO6 (D4) | NSS |
-| Reset | GPIO4 (D2) | RST |
-| Busy | GPIO5 (D3) | BUSY |
-| Interrupt | GPIO3 (D1) | DIO1 |
-| RF Switch | Internal DIO2 | RF_SW |
-| I2C SDA | GPIO21 (D6) | D6 (pass-through) |
-| I2C SCL | GPIO20 (D7) | D7 (pass-through) |
+### Header H1
+
+| Header | HT62-CT | Function |
+|--------------|------------|----------|
+| Pin 1 - Not used |  |  |
+| Pin 2 - Not used |  |  |
+| Pin 3 - Not used |  |  |
+| Pin 4 - 3.3V | Pin 12 3.3V | Power |
+| Pin 5 - GND | Pin 02 GND | Ground |
+| Pin 6 - GND | Pin 13 GND | Ground |
+| Pin 7 - GND | PIN 21 GND | Ground |
+| Pin 8 - 5V | N/A | USB Typ C - Connector |
+
+### Header H2
+
+| Header | HT62-CT | Function |
+|--------------|------------|----------|
+| Pin 1 - RX | Pin 19 RXD | Data |
+| Pin 2 - TX | Pin 20 TXD | Data |
+| Pin 3 - Not used |  |  |
+| Pin 4 - Not used |  |  |
+| Pin 5 - Not used |  |  |
+| Pin 6 - GPIO 02 | Pin 08 GPIO 02 |  |
+| Pin 7 - SCL | Pin 01 GPIO 01 | I2C SCL |
+| Pin 8 - SDA | Pim 00 GPIO 00 | I2C SDA |
+
+### I2C Sensor Support
+GPIO 01 (D7) and GPIO 00 (D6) are available via the SX1262 pass-through pins D7 and D6 for external I2C sensors:
+- **SDA**: GPIO 00 (D6)
+- **SCL**: GPIO 01 (D7)
+
+Compatible sensors include BME280, BME680, SSD1306 displays, etc.
 
 ## 🚀 Installation
 
 ### Method 1: Web Flasher (Easiest)
-1. Connect your Seeed XIAO ESP32-C3 via USB
+1. Connect your HT-CT62 (Esp32-C3 + SX1262) devboard via USB
 2. Visit [Meshtastic Web Flasher](https://flasher.meshtastic.org/)
 3. Upload the `firmware-seeed-xiao-esp32c3-sx1262-2.7.19.9d06c1b.factory.bin` file
 4. Follow the on-screen instructions
@@ -82,13 +97,13 @@ esptool.py --chip esp32c3 --port /dev/ttyACM0 --baud 921600 \
 **Linux**: Use `/dev/ttyUSB0` or `/dev/ttyACM0`
 
 ### Method 3: PlatformIO (Advanced)
-Clone the source and build yourself - see build instructions in the wiki.
+Clone the source and build yourself - see build instructions in the PlatformIO wiki.
 
 ## ⚙️ Configuration
 
 After flashing:
 1. Install the Meshtastic app on your phone ([iOS](https://meshtastic.org/docs/software/apple/installation/) / [Android](https://meshtastic.org/docs/software/android/installation/))
-2. Connect via Bluetooth
+2. Connect via Bluetooth (initial Password: 123456)
 3. Set your device name and region
 4. Join or create channels
 
@@ -96,15 +111,15 @@ After flashing:
 
 - ✅ **Full Meshtastic support** - Messaging, position sharing, telemetry
 - ✅ **SX1262 LoRa radio** - Long range mesh networking
-- ✅ **I2C sensor support** - GPIO20/21 available for BME280, OLED displays, etc.
-- ✅ **Compact form factor** - Stackable design saves space
+- ✅ **I2C sensor support** - GPIO04/05 available for BME280, OLED displays, etc.
+- ✅ **Compact form factor** - Stackable design
 - ✅ **Low power consumption** - Perfect for portable nodes
 
 ## 🔧 Adding I2C Sensors (Optional)
 
-The pass-through pins D6 and D7 provide I2C connectivity:
-- **SDA**: GPIO21 (D6)
-- **SCL**: GPIO20 (D7)
+The module provide I2C connectivity:
+- **SDA**: GPIO00 (D0)
+- **SCL**: GPIO01 (D1)
 
 Compatible sensors:
 - BME280/BME680 (temperature, humidity, pressure)
@@ -124,10 +139,9 @@ Connect sensors to the pass-through pins and share 3.3V/GND.
 
 ## 🐛 Troubleshooting
 
-**"Error no interface"**
-- Ensure antenna is connected to the SX1262
-- Verify modules are properly seated on headers
-- Check power pins are aligned correctly
+**"Error no LoRa TX/RX possible"**
+- Ensure antenna is connected to the HT-62CT
+- Check power pins or USB-C Connetor are aligned/ connected correctly
 
 **No nodes appear**
 - Verify region settings match nearby nodes
@@ -143,14 +157,13 @@ Connect sensors to the pass-through pins and share 3.3V/GND.
 ## 📚 Resources
 
 - [Meshtastic Documentation](https://meshtastic.org/docs/)
-- [Seeed XIAO ESP32-C3 Wiki](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/)
-- [Wio SX1262 Module Wiki](https://wiki.seeedstudio.com/wio_sx1262/)
+- [HT-CT62 (Esp32-C3 + SX1262) devboard](https://www.tindie.com/products/allexok/lora-shuttle-ht-ct62-esp32-c3-sx1262-devboard)
 - [Meshtastic Discord](https://discord.gg/meshtastic)
 
 ## 📝 Firmware Details
 
 - **Version**: 2.7.19.9d06c1b
-- **Build Date**: 2026-01-31
+- **Build Date**: 2026-02-31
 - **Hardware Model**: 254 (SEEED_XIAO_ESP32C3)
 - **Radio**: SX1262 with DIO2 RF switching, 1.8V TCXO
 
@@ -165,7 +178,8 @@ This firmware is based on [Meshtastic](https://github.com/meshtastic/firmware) (
 ## 🙏 Credits
 
 - [Meshtastic Project](https://meshtastic.org/) - Open source mesh networking
-- [Seeed Studio](https://www.seeedstudio.com/) - XIAO ESP32-C3 hardware
+- [Heltec](https://heltec.org/project/ht-ct62/) - HT-62CT hardware
+- [Prokyber](hhttps://www.tindie.com/products/allexok/lora-shuttle-ht-ct62-esp32-c3-sx1262-devboard) - Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) devboard
 - Community contributors and testers
 
 ---

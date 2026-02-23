@@ -1,11 +1,11 @@
 #!/bin/bash
-# Flash script for Seeed XIAO ESP32-C3 + Wio SX1262 Meshtastic Firmware
+# Flash script for Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) devboard Meshtastic Firmware
 
 set -e
 
 echo "╔═══════════════════════════════════════════════════════════╗"
 echo "║   Meshtastic Firmware Flasher                             ║"
-echo "║   Seeed XIAO ESP32-C3 + Wio SX1262                        ║"
+echo "║   Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) devboard      ║"
 echo "╚═══════════════════════════════════════════════════════════╝"
 echo ""
 

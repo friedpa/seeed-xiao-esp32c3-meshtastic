@@ -4,15 +4,9 @@ This variant is designed for the **Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) dev
 
 ## Hardware Configuration
 
-### PIN Configuration
-The following Power definition apply:
-- ESP32-C3 **5V** → SX1262 **VCC**
-- ESP32-C3 **GND** → SX1262 **GND**
-- ESP32-C3 **3.3V** → SX1262 **3.3V**
-
 ### Pin Mappings
 
-#### HT-62CT intern PIN mapping
+#### HT-62CT intern PIN mapping between ESP32-C3 and SX1262
 
 | ESP32-C3 Pin | SX1262 Pin | Function |
 |--------------|------------|----------|
@@ -29,8 +23,8 @@ The following Power definition apply:
 | D15 (GPIO 15) | DIO1 | LoRa Interrupt |
 | D16 (GPIO 16) | SCK | SPI Clock |
 
-### PIN Mapping of the 
-The modules have 2.54mm header pinouts with 8 pins per side.
+### PIN Mapping of the module headers
+The module has two 2.54mm header pinouts with 8 pins per side.
 
 ### Header H1
 

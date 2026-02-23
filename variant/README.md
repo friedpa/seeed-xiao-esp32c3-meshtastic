@@ -10,7 +10,6 @@ This variant is designed for the **Lora-shuttle: HT-CT62 (Esp32-C3 + SX1262) dev
 
 | ESP32-C3 Pin | SX1262 Pin | Function |
 |--------------|------------|----------|
-| N/A | VCC | Power |
 | GND | GND | Ground |
 | 3.3V | 3.3V | Power |
 | D00 (GPIO 00) | D6 | Pass-through (I2C SDA) |
